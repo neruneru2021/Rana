@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rana.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Rana.ViewModels
             base.Dispatcher = dispatcher;
         }
 
-        private string _loginTextBoxText = string.Empty;
+        private string _loginTextBoxText = "Guest User";
         public string LoginTextBoxText
         {
             get { return _loginTextBoxText; }
@@ -36,7 +37,7 @@ namespace Rana.ViewModels
 
         internal void LoginButtonClick()
         {
-            
+            MainView.Instance.ShowView(nameof(MenuView), true);
         }
     }
 }

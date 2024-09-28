@@ -1,4 +1,5 @@
 ﻿using MetroFramework;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using Rana.Entity;
 using Rana.ViewModels;
@@ -19,14 +20,49 @@ namespace Rana.Views
     {
         private MainViewModel _viewModel;
 
+        private static MainView _instance;
+
+        public static MainView Instance
+        {
+            get { return _instance ?? new MainView(); }
+        }
+
+        internal void ShowView(string argViewName, bool isCreate)
+        {
+            //文字からインスタンスを生成
+            string fullName = "Rana.Views." + argViewName;
+            Type type = Type.GetType(fullName);
+            var uc = (MetroUserControl)Activator.CreateInstance(type);
+
+            if (MainPanel.Controls.ContainsKey(argViewName))
+            {
+                if (isCreate)
+                {
+                    MainPanel.Controls.RemoveByKey(argViewName);
+                }
+                else
+                {
+                    MainPanel.Controls[argViewName].BringToFront();
+                    return;
+                }
+            }
+
+            MainPanel.Controls.Add(uc);
+            uc.Dock = System.Windows.Forms.DockStyle.Fill;
+            uc.Parent = this;
+            uc.BringToFront();
+        }
+
         public MainView()
         {
             InitializeComponent();
+            _instance = this;
 
             _viewModel = new MainViewModel(Dispatcher.CurrentDispatcher);
             _viewModel.PropertyChanged += _viewModel_PropertyChanged;
 
             this.StyleManager = RanaStyleManager;
+            //this.StyleManager = MainView.Instance.StyleManager;
 
             this.FormClosed += (_, __) => _viewModel.Dispose();
 
@@ -52,6 +88,13 @@ namespace Rana.Views
                 _viewModel.Load();
                 ThemeComboBox.SelectedIndexChanged += (__, _) => RanaStyleManager.Theme = _viewModel.RanaMetroThemeStyle.Value1;
                 ColorComboBox.SelectedIndexChanged += (__, _) => RanaStyleManager.Style = _viewModel.RanaMetroColorStyle.Value1;
+
+                ShowView(nameof(LoginView), true);
+            };
+
+            TitleLink.Click += (_, __) =>
+            {
+                MainView.Instance.ShowView(nameof(LoginView), false);
             };
         }
 

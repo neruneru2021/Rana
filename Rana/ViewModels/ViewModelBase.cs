@@ -14,7 +14,11 @@ namespace Rana.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected Dispatcher Dispatcher { get; set; }
+        public Dispatcher Dispatcher 
+        {
+            get; 
+            set; 
+        }
 
         protected bool SetProperty<T>(ref T field,
             T value, [CallerMemberName] string propertyName = null)
