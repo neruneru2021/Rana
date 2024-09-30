@@ -19,50 +19,16 @@ namespace Rana.Views
             get { return _instance ?? new MainView(); }
         }
 
-        internal void ShowView(string argViewName, bool isCreate)
+        public MetroThemeStyle MetroThemeStyle
         {
-            //文字からインスタンスを生成
-            string fullName = "Rana.Views." + argViewName;
-            Type type = Type.GetType(fullName);
-            var uc = (MetroUserControl)Activator.CreateInstance(type);
-
-            if (MainPanel.Controls.ContainsKey(argViewName))
-            {
-                if (isCreate)
-                {
-                    MainPanel.Controls.RemoveByKey(argViewName);
-                }
-                else
-                {
-                    MainPanel.Controls[argViewName].BringToFront();
-                    return;
-                }
-            }
-
-            MainPanel.Controls.Add(uc);
-            uc.Dock = System.Windows.Forms.DockStyle.Fill;
-            uc.Parent = this;
-            uc.BringToFront();
+            get { return MainView.Instance.RanaStyleManager.Theme; }
+            set { MainView.Instance.RanaStyleManager.Theme = (MetroThemeStyle)value; }
         }
 
-        internal void SetTheme(MetroThemeStyle theme)
+        public MetroColorStyle MetroColorStyle
         {
-            MainView.Instance.RanaStyleManager.Theme = theme;
-        }
-
-        internal MetroThemeStyle GetTheme()
-        {
-            return MainView.Instance.RanaStyleManager.Theme;
-        }
-
-        internal void SetColor(MetroColorStyle color)
-        {
-            MainView.Instance.RanaStyleManager.Style = color;
-        }
-
-        internal MetroColorStyle GetStyle()
-        {
-            return MainView.Instance.RanaStyleManager.Style;
+            get { return MainView.Instance.RanaStyleManager.Style; }
+            set { MainView.Instance.RanaStyleManager.Style = (MetroColorStyle)value; }
         }
 
         public MainView()
@@ -96,6 +62,32 @@ namespace Rana.Views
             {
                 MainView.Instance.ShowView(nameof(LoginView), false);
             };
+        }
+
+        internal void ShowView(string argViewName, bool isCreate)
+        {
+            //文字からインスタンスを生成
+            string fullName = "Rana.Views." + argViewName;
+            Type type = Type.GetType(fullName);
+            var uc = (MetroUserControl)Activator.CreateInstance(type);
+
+            if (MainPanel.Controls.ContainsKey(argViewName))
+            {
+                if (isCreate)
+                {
+                    MainPanel.Controls.RemoveByKey(argViewName);
+                }
+                else
+                {
+                    MainPanel.Controls[argViewName].BringToFront();
+                    return;
+                }
+            }
+
+            MainPanel.Controls.Add(uc);
+            uc.Dock = System.Windows.Forms.DockStyle.Fill;
+            uc.Parent = this;
+            uc.BringToFront();
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Rana.ViewModels
                 ThemeComboBoxDataSource.Add(new ObjectLv1<MetroThemeStyle, string>(style, style.ToString()));
 
             //RanaMetroThemeStyle = new ObjectLv1<MetroThemeStyle, string>(MetroThemeStyle.Default, MetroThemeStyle.Default.ToString());
-            ThemeComboBoxSelectedValue = MainView.Instance.GetTheme();
+            ThemeComboBoxSelectedValue = MainView.Instance.MetroThemeStyle;
 
 
 
@@ -28,7 +28,7 @@ namespace Rana.ViewModels
                 ColorComboBoxDataSource.Add(new ObjectLv1<MetroColorStyle, string>(style, style.ToString()));
 
             //RanaMetroColorStyle = new ObjectLv1<MetroColorStyle, string>(MetroColorStyle.Default, MetroColorStyle.Default.ToString());
-            ColorComboBoxSelectedValue = MainView.Instance.GetStyle();
+            ColorComboBoxSelectedValue = MainView.Instance.MetroColorStyle;
         }
 
         public BindingListAsync<ObjectLv1<MetroThemeStyle, string>> ThemeComboBoxDataSource { get; set; }

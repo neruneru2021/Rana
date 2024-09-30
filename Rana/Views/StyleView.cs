@@ -27,10 +27,8 @@ namespace Rana.Views
             ColorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             ColorComboBox.DataBindings.Add(nameof(ColorComboBox.SelectedValue), _viewModel, nameof(_viewModel.ColorComboBoxSelectedValue), false, DataSourceUpdateMode.OnPropertyChanged);
 
-            //ThemeComboBox.SelectedIndexChanged += (__, _) => MainView.Instance.RanaStyleManager.Theme = _viewModel.RanaMetroThemeStyle.Value1;
-            ThemeComboBox.SelectedIndexChanged += (__, _) => MainView.Instance.SetTheme(_viewModel.RanaMetroThemeStyle.Value1);
-            //ColorComboBox.SelectedIndexChanged += (__, _) => MainView.Instance.RanaStyleManager.Style = _viewModel.RanaMetroColorStyle.Value1;
-            ColorComboBox.SelectedIndexChanged += (__, _) => MainView.Instance.SetColor(_viewModel.RanaMetroColorStyle.Value1);
+            ThemeComboBox.SelectedIndexChanged += (__, _) => MainView.Instance.MetroThemeStyle = _viewModel.RanaMetroThemeStyle.Value1;
+            ColorComboBox.SelectedIndexChanged += (__, _) => MainView.Instance.MetroColorStyle = _viewModel.RanaMetroColorStyle.Value1;
         }
     }
 }
