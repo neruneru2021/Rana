@@ -38,12 +38,12 @@
             // 
             // alarmButton
             // 
-            this.alarmButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.alarmButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.alarmButton.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.alarmButton.FontWeight = MetroFramework.MetroButtonWeight.Light;
-            this.alarmButton.Location = new System.Drawing.Point(300, 137);
+            this.alarmButton.Location = new System.Drawing.Point(448, 247);
             this.alarmButton.Name = "alarmButton";
-            this.alarmButton.Size = new System.Drawing.Size(129, 50);
+            this.alarmButton.Size = new System.Drawing.Size(129, 42);
             this.alarmButton.TabIndex = 0;
             this.alarmButton.Text = "alarm";
             this.alarmButton.UseSelectable = true;
@@ -51,12 +51,12 @@
             // 
             // releaseButton
             // 
-            this.releaseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.releaseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.releaseButton.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.releaseButton.FontWeight = MetroFramework.MetroButtonWeight.Light;
-            this.releaseButton.Location = new System.Drawing.Point(300, 193);
+            this.releaseButton.Location = new System.Drawing.Point(448, 295);
             this.releaseButton.Name = "releaseButton";
-            this.releaseButton.Size = new System.Drawing.Size(129, 50);
+            this.releaseButton.Size = new System.Drawing.Size(129, 42);
             this.releaseButton.TabIndex = 1;
             this.releaseButton.Text = "release";
             this.releaseButton.UseSelectable = true;
@@ -69,10 +69,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView1.ImageIndex = 0;
             this.treeView1.ImageList = this.imageList1;
-            this.treeView1.Location = new System.Drawing.Point(21, 17);
+            this.treeView1.Location = new System.Drawing.Point(3, 3);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(273, 257);
+            this.treeView1.Size = new System.Drawing.Size(439, 334);
             this.treeView1.TabIndex = 2;
             this.treeView1.DoubleClick += new System.EventHandler(this.treeView1_DoubleClick);
             // 
@@ -91,7 +91,7 @@
             this.Controls.Add(this.releaseButton);
             this.Controls.Add(this.alarmButton);
             this.Name = "TreeView";
-            this.Size = new System.Drawing.Size(443, 291);
+            this.Size = new System.Drawing.Size(580, 340);
             this.ResumeLayout(false);
 
         }

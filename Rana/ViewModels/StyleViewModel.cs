@@ -2,17 +2,14 @@
 using Rana.BindHelpers;
 using Rana.Entity;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Threading;
 
 namespace Rana.ViewModels
 {
-    public sealed class HelpViewModel : ViewModelBase
+    public sealed class StyleViewModel : ViewModelBase
     {
-        public HelpViewModel(Dispatcher dispatcher)
+        public StyleViewModel(Dispatcher dispatcher)
         {
             base.Dispatcher = dispatcher;
 

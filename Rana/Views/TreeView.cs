@@ -14,7 +14,7 @@ namespace Rana.Views
 {
     public partial class TreeView : MetroUserControl
     {
-        private TreeViewModel _viewModel { get; set; }
+        private TreeViewModel _viewModel = new TreeViewModel(Dispatcher.CurrentDispatcher);
 
         private List<ProductBase> products = new List<ProductBase>();
 

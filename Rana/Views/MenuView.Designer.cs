@@ -30,48 +30,51 @@
         {
             this.TreeMetroTile = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroTile3 = new MetroFramework.Controls.MetroTile();
+            this.StyleMetroTile = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // TreeMetroTile
             // 
             this.TreeMetroTile.ActiveControl = null;
-            this.TreeMetroTile.Location = new System.Drawing.Point(14, 14);
+            this.TreeMetroTile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.TreeMetroTile.Location = new System.Drawing.Point(30, 102);
             this.TreeMetroTile.Name = "TreeMetroTile";
             this.TreeMetroTile.Size = new System.Drawing.Size(115, 87);
             this.TreeMetroTile.TabIndex = 0;
-            this.TreeMetroTile.Text = "metroTile1";
+            this.TreeMetroTile.Text = "Tree";
             this.TreeMetroTile.UseSelectable = true;
             // 
             // metroTile2
             // 
             this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(135, 14);
+            this.metroTile2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.metroTile2.Location = new System.Drawing.Point(151, 102);
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(107, 87);
             this.metroTile2.TabIndex = 1;
             this.metroTile2.Text = "metroTile2";
             this.metroTile2.UseSelectable = true;
             // 
-            // metroTile3
+            // StyleMetroTile
             // 
-            this.metroTile3.ActiveControl = null;
-            this.metroTile3.Location = new System.Drawing.Point(14, 121);
-            this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(198, 84);
-            this.metroTile3.TabIndex = 2;
-            this.metroTile3.Text = "metroTile3";
-            this.metroTile3.UseSelectable = true;
+            this.StyleMetroTile.ActiveControl = null;
+            this.StyleMetroTile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.StyleMetroTile.Location = new System.Drawing.Point(30, 195);
+            this.StyleMetroTile.Name = "StyleMetroTile";
+            this.StyleMetroTile.Size = new System.Drawing.Size(228, 84);
+            this.StyleMetroTile.TabIndex = 2;
+            this.StyleMetroTile.Text = "Style";
+            this.StyleMetroTile.UseSelectable = true;
             // 
             // MenuView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.metroTile3);
+            this.Controls.Add(this.StyleMetroTile);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.TreeMetroTile);
             this.Name = "MenuView";
-            this.Size = new System.Drawing.Size(355, 265);
+            this.Size = new System.Drawing.Size(580, 340);
             this.ResumeLayout(false);
 
         }
@@ -80,6 +83,6 @@
 
         private MetroFramework.Controls.MetroTile TreeMetroTile;
         private MetroFramework.Controls.MetroTile metroTile2;
-        private MetroFramework.Controls.MetroTile metroTile3;
+        private MetroFramework.Controls.MetroTile StyleMetroTile;
     }
 }

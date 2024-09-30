@@ -1,6 +1,6 @@
 ﻿namespace Rana.Views
 {
-    partial class HelpView
+    partial class StyleView
     {
         /// <summary> 
         /// 必要なデザイナー変数です。
@@ -52,13 +52,13 @@
             this.ThemeComboBox.TabIndex = 6;
             this.ThemeComboBox.UseSelectable = true;
             // 
-            // HelpView
+            // StyleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.ColorComboBox);
             this.Controls.Add(this.ThemeComboBox);
-            this.Name = "HelpView";
+            this.Name = "StyleView";
             this.Size = new System.Drawing.Size(353, 119);
             this.ResumeLayout(false);
 

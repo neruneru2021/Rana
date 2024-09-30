@@ -2,27 +2,18 @@
 using MetroFramework.Controls;
 using Rana.Entity;
 using Rana.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Threading;
 
 namespace Rana.Views
 {
-    public partial class HelpView : MetroUserControl
+    public partial class StyleView : MetroUserControl
     {
-        private HelpViewModel _viewModel;
+        private StyleViewModel _viewModel = new StyleViewModel(Dispatcher.CurrentDispatcher);
 
-        public HelpView(HelpViewModel viewModel)
+        public StyleView()
         {
             InitializeComponent();
-
-            _viewModel = viewModel;
 
             ThemeComboBox.DataBindings.Add(nameof(ThemeComboBox.DataSource), _viewModel, nameof(_viewModel.ThemeComboBoxDataSource));
             ThemeComboBox.ValueMember = nameof(ObjectLv1<MetroThemeStyle, string>.Value1);
@@ -36,6 +27,10 @@ namespace Rana.Views
             ColorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             ColorComboBox.DataBindings.Add(nameof(ColorComboBox.SelectedValue), _viewModel, nameof(_viewModel.ColorComboBoxSelectedValue), false, DataSourceUpdateMode.OnPropertyChanged);
 
+            //ThemeComboBox.SelectedIndexChanged += (__, _) => MainView.Instance.RanaStyleManager.Theme = _viewModel.RanaMetroThemeStyle.Value1;
+            ThemeComboBox.SelectedIndexChanged += (__, _) => MainView.Instance.SetTheme(_viewModel.RanaMetroThemeStyle.Value1);
+            //ColorComboBox.SelectedIndexChanged += (__, _) => MainView.Instance.RanaStyleManager.Style = _viewModel.RanaMetroColorStyle.Value1;
+            ColorComboBox.SelectedIndexChanged += (__, _) => MainView.Instance.SetColor(_viewModel.RanaMetroColorStyle.Value1);
         }
     }
 }

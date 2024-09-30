@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Windows.Threading;
 
 namespace Rana.ViewModels
@@ -14,11 +8,7 @@ namespace Rana.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Dispatcher Dispatcher 
-        {
-            get; 
-            set; 
-        }
+        public Dispatcher Dispatcher { get; set; }
 
         protected bool SetProperty<T>(ref T field,
             T value, [CallerMemberName] string propertyName = null)

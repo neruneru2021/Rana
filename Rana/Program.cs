@@ -32,5 +32,40 @@ namespace Rana
 
             MessageBox.Show(msg);
         }
+
+        private static void EnumForeach()
+        {
+            foreach (ResultEnum result in Enum.GetValues(typeof(ResultEnum)))
+                MessageBox.Show(result.ToMsgString());
+        }
     }
+
+    public enum ResultEnum
+    {
+        Success,
+        failure,
+        Warning
+    }
+
+    public static class ResultExtention
+    {
+        public static string ToMsgString(this ResultEnum result)
+        {
+            switch (result)
+            {
+                case ResultEnum.Success:
+                    return "The process has been successfully completed.";
+                case ResultEnum.failure:
+                    return "An exception has occurred";
+                case ResultEnum.Warning:
+                    return "There is a warning.";
+                default:
+                    throw new ArgumentException("Undefined parameter detected!");
+            }
+        }
+    }
+
+
+
+
 }

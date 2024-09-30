@@ -15,15 +15,14 @@ namespace Rana.Views
 {
     public partial class MenuView : MetroUserControl
     {
-        public MenuViewModel _viewModel { get; set; }
+        private MenuViewModel _viewModel  = new MenuViewModel(Dispatcher.CurrentDispatcher);
 
         public MenuView()
         {
             InitializeComponent();
 
-            _viewModel = new MenuViewModel(Dispatcher.CurrentDispatcher);
-
             TreeMetroTile.Click += (_, __) => _viewModel.TreeMetroTileClick();
+            StyleMetroTile.Click += (_, __) => _viewModel.StyleMetroTileClick();
         }
     }
 }
