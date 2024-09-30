@@ -1,6 +1,7 @@
 ﻿using MetroFramework;
 using Rana.BindHelpers;
 using Rana.Entity;
+using Rana.Views;
 using System;
 using System.Linq;
 using System.Windows.Threading;
@@ -17,13 +18,17 @@ namespace Rana.ViewModels
             foreach (MetroThemeStyle style in Enum.GetValues(typeof(MetroThemeStyle)))
                 ThemeComboBoxDataSource.Add(new ObjectLv1<MetroThemeStyle, string>(style, style.ToString()));
 
-            RanaMetroThemeStyle = new ObjectLv1<MetroThemeStyle, string>(MetroThemeStyle.Default, MetroThemeStyle.Default.ToString());
+            //RanaMetroThemeStyle = new ObjectLv1<MetroThemeStyle, string>(MetroThemeStyle.Default, MetroThemeStyle.Default.ToString());
+            ThemeComboBoxSelectedValue = MainView.Instance.GetTheme();
+
+
 
             ColorComboBoxDataSource = new BindingListAsync<ObjectLv1<MetroColorStyle, string>>(base.Dispatcher);
             foreach (MetroColorStyle style in Enum.GetValues(typeof(MetroColorStyle)))
                 ColorComboBoxDataSource.Add(new ObjectLv1<MetroColorStyle, string>(style, style.ToString()));
 
-            RanaMetroColorStyle = new ObjectLv1<MetroColorStyle, string>(MetroColorStyle.Default, MetroColorStyle.Default.ToString());
+            //RanaMetroColorStyle = new ObjectLv1<MetroColorStyle, string>(MetroColorStyle.Default, MetroColorStyle.Default.ToString());
+            ColorComboBoxSelectedValue = MainView.Instance.GetStyle();
         }
 
         public BindingListAsync<ObjectLv1<MetroThemeStyle, string>> ThemeComboBoxDataSource { get; set; }

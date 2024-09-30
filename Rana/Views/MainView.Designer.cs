@@ -34,6 +34,7 @@
             this.MainPanel = new MetroFramework.Controls.MetroPanel();
             this.TitleLink = new MetroFramework.Controls.MetroLink();
             ((System.ComponentModel.ISupportInitialize)(this.RanaStyleManager)).BeginInit();
+            this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // RanaStyleManager
@@ -42,18 +43,19 @@
             // 
             // CloseButton
             // 
-            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.CloseButton.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.CloseButton.FontSize = MetroFramework.MetroButtonSize.Medium;
             this.CloseButton.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.CloseButton.Location = new System.Drawing.Point(552, 25);
+            this.CloseButton.Location = new System.Drawing.Point(0, 310);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(48, 30);
+            this.CloseButton.Size = new System.Drawing.Size(580, 30);
             this.CloseButton.TabIndex = 6;
             this.CloseButton.Text = "Close";
             this.CloseButton.UseSelectable = true;
             // 
             // MainPanel
             // 
+            this.MainPanel.Controls.Add(this.CloseButton);
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainPanel.HorizontalScrollbarBarColor = true;
             this.MainPanel.HorizontalScrollbarHighlightOnWheel = false;
@@ -68,13 +70,16 @@
             // 
             // TitleLink
             // 
+            this.TitleLink.DisplayFocus = true;
+            this.TitleLink.Dock = System.Windows.Forms.DockStyle.Top;
             this.TitleLink.FontSize = MetroFramework.MetroLinkSize.Tall;
             this.TitleLink.FontWeight = MetroFramework.MetroLinkWeight.Regular;
-            this.TitleLink.Location = new System.Drawing.Point(20, 25);
+            this.TitleLink.Location = new System.Drawing.Point(20, 60);
             this.TitleLink.Name = "TitleLink";
-            this.TitleLink.Size = new System.Drawing.Size(75, 30);
+            this.TitleLink.Size = new System.Drawing.Size(580, 25);
             this.TitleLink.TabIndex = 8;
             this.TitleLink.Text = "Rana";
+            this.TitleLink.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.TitleLink.UseSelectable = true;
             // 
             // MainView
@@ -84,11 +89,11 @@
             this.ClientSize = new System.Drawing.Size(620, 420);
             this.Controls.Add(this.TitleLink);
             this.Controls.Add(this.MainPanel);
-            this.Controls.Add(this.CloseButton);
             this.Font = new System.Drawing.Font("Meiryo UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainView";
             ((System.ComponentModel.ISupportInitialize)(this.RanaStyleManager)).EndInit();
+            this.MainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

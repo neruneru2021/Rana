@@ -50,9 +50,19 @@ namespace Rana.Views
             MainView.Instance.RanaStyleManager.Theme = theme;
         }
 
+        internal MetroThemeStyle GetTheme()
+        {
+            return MainView.Instance.RanaStyleManager.Theme;
+        }
+
         internal void SetColor(MetroColorStyle color)
         {
             MainView.Instance.RanaStyleManager.Style = color;
+        }
+
+        internal MetroColorStyle GetStyle()
+        {
+            return MainView.Instance.RanaStyleManager.Style;
         }
 
         public MainView()

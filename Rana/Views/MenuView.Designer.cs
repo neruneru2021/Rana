@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.TreeMetroTile = new MetroFramework.Controls.MetroTile();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.ProductMetroTile = new MetroFramework.Controls.MetroTile();
             this.StyleMetroTile = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
@@ -44,16 +44,16 @@
             this.TreeMetroTile.Text = "Tree";
             this.TreeMetroTile.UseSelectable = true;
             // 
-            // metroTile2
+            // ProductMetroTile
             // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.metroTile2.Location = new System.Drawing.Point(151, 102);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(107, 87);
-            this.metroTile2.TabIndex = 1;
-            this.metroTile2.Text = "metroTile2";
-            this.metroTile2.UseSelectable = true;
+            this.ProductMetroTile.ActiveControl = null;
+            this.ProductMetroTile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ProductMetroTile.Location = new System.Drawing.Point(151, 102);
+            this.ProductMetroTile.Name = "ProductMetroTile";
+            this.ProductMetroTile.Size = new System.Drawing.Size(107, 87);
+            this.ProductMetroTile.TabIndex = 1;
+            this.ProductMetroTile.Text = "Product";
+            this.ProductMetroTile.UseSelectable = true;
             // 
             // StyleMetroTile
             // 
@@ -71,7 +71,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.StyleMetroTile);
-            this.Controls.Add(this.metroTile2);
+            this.Controls.Add(this.ProductMetroTile);
             this.Controls.Add(this.TreeMetroTile);
             this.Name = "MenuView";
             this.Size = new System.Drawing.Size(580, 340);
@@ -82,7 +82,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroTile TreeMetroTile;
-        private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroTile ProductMetroTile;
         private MetroFramework.Controls.MetroTile StyleMetroTile;
     }
 }

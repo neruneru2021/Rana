@@ -15,6 +15,11 @@ namespace Rana.ViewModels
             base.Dispatcher = dispatcher;
         }
 
+        internal void ProductMetroTileClick()
+        {
+            MainView.Instance.ShowView(nameof(ProductView), true);
+        }
+
         internal void StyleMetroTileClick()
         {
             MainView.Instance.ShowView(nameof(StyleView), true);
